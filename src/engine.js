@@ -8,6 +8,7 @@ import icosphere from 'icosphere'
 import createTexture from 'gl-texture2d'
 import createShader from './shader'
 import createVideo from './video'
+import createAudio from './audio'
 import loadImage from 'img'
 
 const lineTint = rgb('#be360d')
@@ -15,7 +16,7 @@ const pointTint = rgb('#000')
 const sphere = icosphere(3)
 
 //get N random 3D unit vectors
-const N = 40000
+const N = 30000
 const unit = () => rand(-1, 1)
 const unitVector = () => range(3).map(unit)
 const sphereVector = () => rvec3([])
@@ -37,7 +38,8 @@ module.exports = function(gl) {
     // .faces(sphere.cells)
 
   const program = createShader(gl)
-  
+  const audio = createAudio(gl)
+
   let texture
   const updateVideo = createVideo(gl, (err, tex) => {
     texture = tex
@@ -54,11 +56,14 @@ module.exports = function(gl) {
     if (!texture)
       return
 
-    texture.bind(0)
-    texture.update()
+    
     // gl.lineWidth(3)
 
     program.bind(dt)
+    audio(program.shader)
+    texture.bind(0)
+    texture.update()
+
     program.tint(lineTint)
     lines.bind(program.shader)
     lines.draw(gl.LINE_LOOP)

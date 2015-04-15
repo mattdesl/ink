@@ -11,6 +11,9 @@ const glslify = require('glslify')
 module.exports = function(gl) {
   const vert = glslify('./shaders/point.vert')
   const frag = glslify('./shaders/point.frag')
+  console.log(vert)
+  console.log(gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS))
+
   const shader = createShader(gl, vert, frag)
 
   let time = 0

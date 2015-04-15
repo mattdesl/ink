@@ -12,7 +12,7 @@ module.exports = function(gl, cb) {
     element.play()
     cb(null, texture)
   })
-  element.src = 'video/horse.mp4'
+  element.src = 'video/nyc.mp4'
 
   function update(texture) {
     texture.setPixels(element)
