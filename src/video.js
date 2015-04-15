@@ -5,7 +5,8 @@ import events from 'dom-events'
 module.exports = function(gl, cb) {
   const element = document.createElement('video')
   element.setAttribute('loop', true)
-
+  element.setAttribetu('muted', 'muted')
+  
   events.on(element, 'canplay', ev => {
     const texture = createTexture(gl, element)
     texture.update = update.bind(null, texture)
