@@ -3,7 +3,7 @@ import Analyser from 'gl-audio-analyser'
 
 module.exports = function(gl) {
   const audio = new Audio()
-  const analyser = Analyser(gl, audio)
+  // const analyser = Analyser(gl, audio)
 
   badge({
     client_id: 'b95f61a90da961736c03f659c03cb0cc',
@@ -12,7 +12,11 @@ module.exports = function(gl) {
     getFonts: true
   }, function(err, src, json, div) {
     if (err) throw err
+      
+    console.log(src)
     audio.src = src
+
+
     audio.loop = true
     audio.addEventListener('canplay', function() {
       audio.play()
@@ -20,6 +24,6 @@ module.exports = function(gl) {
   })
 
   return function waveform(shader) {
-    shader.uniforms.iWaveform = analyser.bindWaveform(1)
+    // shader.uniforms.iWaveform = analyser.bindWaveform(1)
   }
 }
