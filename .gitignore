@@ -6,3 +6,5 @@ node_modules/
 img/
 video/
 !video/nyc.mp4
+audio/
+!audio/audio.mp3
