@@ -1,15 +1,22 @@
-#ifdef GL_ES
 precision mediump float;
-#endif
 
 uniform vec2 iResolution;
 uniform vec3 tint;
+uniform sampler2D iChannel0;
 varying vec2 uv;
 
 void main() {
-  // vec2 uv = gl_FragCoord.xy / iResolution.xy;
-  vec3 color = vec3(0.25);
-  gl_FragColor.rgb = tint;
+  float dist = length(uv - 0.5);
+  dist = smoothstep(0.4, 0.5, dist);
+
+  vec3 color = texture2D(iChannel0, uv).rgb;
+
+  if (tint == vec3(0.0)) {
+    gl_FragColor.rgb = color;
+  }
+  else {
+    gl_FragColor.rgb = tint;
+  }
   gl_FragColor.a = 1.0;
    // gl_FragColor = vec4(1.0) * tint;
 }

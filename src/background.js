@@ -11,7 +11,7 @@ module.exports = function(gl) {
       color1: rgb('#e4d3b6'),
       color2: rgb('#6f614a'),
       smoothing: [ -0.5, 1.0 ],
-      noiseAlpha: 0.2,
+      noiseAlpha: 0.08,
       coloredNoise: true,
       offset: [ -0.05, -0.15 ]
   })
