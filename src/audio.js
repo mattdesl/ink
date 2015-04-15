@@ -9,7 +9,7 @@ module.exports = function(gl) {
 
   badge({
     client_id: 'b95f61a90da961736c03f659c03cb0cc',
-    song: '//soundcloud.com/flume/holdin-on',
+    song: 'https://soundcloud.com/flume/holdin-on',
     dark: false,
     getFonts: true
   }, function(err, src, json, div) {
