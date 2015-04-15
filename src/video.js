@@ -6,6 +6,7 @@ module.exports = function(gl, cb) {
   const element = document.createElement('video')
   element.setAttribute('loop', true)
   element.setAttribute('muted', 'muted')
+  addSource('video/mp4', 'video/nyc2.mp4')
   
   events.on(element, 'canplay', ev => {
     const texture = createTexture(gl, element)
@@ -13,7 +14,13 @@ module.exports = function(gl, cb) {
     element.play()
     cb(null, texture)
   })
-  element.src = 'video/nyc.mp4'
+
+  function addSource(type, path) {
+    var source = document.createElement('source')
+    source.src = path
+    source.type = type
+    return element.appendChild(source)
+  }
 
   function update(texture) {
     texture.setPixels(element)
