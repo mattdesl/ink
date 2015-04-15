@@ -26,7 +26,7 @@ void main() {
   amplitude = ease(amplitude);
 
   vec4 npos = vec4(vpos, sin(iGlobalTime * sin(2.85 * mult.x)));
-  npos.x += amplitude*0.1;
+  npos.x += amplitude*0.3;
 
   float fade = 1.0;
 
@@ -46,6 +46,6 @@ void main() {
   uv = sUv;
   uv.y = 1.0 - sUv.y;
 
-  gl_PointSize = dist * POINT_SIZE + amplitude*0.1;
+  gl_PointSize = dist * POINT_SIZE + amplitude*0.05;
   // uv *= 1.5;
 }

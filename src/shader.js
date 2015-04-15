@@ -11,8 +11,12 @@ const glslify = require('glslify')
 module.exports = function(gl) {
   const vert = glslify('./shaders/point.vert')
   const frag = glslify('./shaders/point.frag')
-  console.log(vert)
-  console.log(gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS))
+
+  var images = gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS)
+  if (images <= 0) {
+    alert("Sorry, this demo isn't ready for your device yet!")
+    console.error("no vertex texture image units")
+  }
 
   const shader = createShader(gl, vert, frag)
 
