@@ -6,8 +6,8 @@ module.exports = function(gl) {
   const analyser = Analyser(gl, audio)
 
   badge({
-    client_id: '408617707914e767ff6e955669a1c4a8',
-    song: 'https://soundcloud.com/flume/holdin-on',
+    client_id: 'b95f61a90da961736c03f659c03cb0cc',
+    song: 'https://soundcloud.com/hermitude/holdin-on-hermitude-remix',
     dark: false,
     getFonts: true
   }, function(err, src, json, div) {
