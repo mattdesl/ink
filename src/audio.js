@@ -16,7 +16,6 @@ module.exports = function(gl) {
     audio.loop = true
     audio.addEventListener('canplay', function() {
       audio.play()
-      audio.currentTime = 40
     }, false)
   })
 
