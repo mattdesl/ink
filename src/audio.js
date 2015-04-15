@@ -18,7 +18,7 @@ module.exports = function(gl) {
     console.log(src)
     var source = document.createElement('source')
     // source.src = src
-    audio.setAttribute('crossorigin', 'anonymous')
+    // audio.setAttribute('crossorigin', 'anonymous')
     audio.src = src
     // audio.appendChild(source)
 
