@@ -14,7 +14,8 @@ module.exports = function(gl) {
     if (err) throw err
     
     //temp fix since CORS are not enabled on SoundCloud :(    
-    audio.src = 'audio/audio.mp3'
+    audio.crossOrigin = 'Anonymous'
+    audio.src = src
     audio.loop = true
     audio.addEventListener('canplay', function() {
       console.log("Playing audio...")
