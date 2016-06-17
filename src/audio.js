@@ -7,7 +7,7 @@ module.exports = function(gl) {
 
   badge({
     client_id: 'b95f61a90da961736c03f659c03cb0cc',
-    song: 'https://soundcloud.com/flume/holdin-on',
+    song: 'https://soundcloud.com/kartell/sg-lewis-no-less-kartell-remix-1',
     dark: false,
     getFonts: true
   }, function(err, src, json, div) {
